@@ -35,9 +35,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Novedades */}
-        <Novedades />
-
         {/* Checkout */}
         {hasItems && (
           <section className="space-y-4">
@@ -57,6 +54,9 @@ export default function App() {
             <OrderSummary />
           </section>
         )}
+
+        {/* Novedades */}
+        <Novedades />
       </main>
 
       <Footer />
