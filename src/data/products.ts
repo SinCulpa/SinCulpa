@@ -8,8 +8,8 @@ export const products: Product[] = [
     image: brownieImg,
     description: 'banana · nueces · huevo',
     price: 3800,
-    badge: 'nuevo',
-    badgeColor: 'brown',
+    badge: undefined,
+    badgeColor: undefined,
   },
   {
     id: 'pack3',

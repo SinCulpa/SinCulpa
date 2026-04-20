@@ -8,16 +8,16 @@ export function PaymentSelector() {
 
   return (
     <div>
-      <p className="text-sm text-gray-500 mb-2 font-medium">Método de pago</p>
+      <p className="text-sm text-[#6b5040] mb-2 font-semibold">Método de pago</p>
       <div className="flex gap-2 flex-wrap">
         {METHODS.map((method) => (
           <button
             key={method}
             onClick={() => setPaymentMethod(method)}
-            className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors ${
+            className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all ${
               paymentMethod === method
-                ? 'bg-amber-800 text-white border-amber-800'
-                : 'bg-white text-gray-600 border-gray-200 hover:border-amber-800 hover:text-amber-800'
+                ? 'bg-[#4a3728] text-[#f5f0e8] border-[#4a3728] shadow-sm'
+                : 'bg-white/60 text-[#8a7560] border-[#d4c9b0] hover:border-[#8a6e4b] hover:text-[#4a3728]'
             }`}
           >
             {method}

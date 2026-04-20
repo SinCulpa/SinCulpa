@@ -12,25 +12,25 @@ export function ProductCard({ product }: Props) {
 
   const badgeClass =
     product.badgeColor === 'brown'
-      ? 'bg-amber-800 text-white'
-      : 'bg-green-600 text-white'
+      ? 'bg-[#4a3728] text-[#f5f0e8]'
+      : 'bg-[#4a6e3a] text-white'
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-4 flex items-center justify-between shadow-sm">
+    <div className="bg-white/75 backdrop-blur-sm rounded-2xl border border-[#d4c9b0] p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow">
       {product.image && (
-        <img src={product.image} alt={product.name} className="w-16 h-16 rounded-xl object-cover mr-3 flex-shrink-0" />
+        <img src={product.image} alt={product.name} className="w-16 h-16 rounded-xl object-cover mr-4 flex-shrink-0 border border-[#e8dfd0]" />
       )}
       <div className="flex-1">
         <div className="flex items-center gap-2 mb-1">
-          <span className="text-gray-800 font-medium text-base">{product.name}</span>
+          <span className="text-[#3a2a1a] font-semibold text-base">{product.name}</span>
           {product.badge && (
             <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${badgeClass}`}>
               {product.badge}
             </span>
           )}
         </div>
-        <p className="text-gray-400 text-sm">{product.description}</p>
-        <p className="text-gray-700 font-semibold mt-1">
+        <p className="text-[#9a8878] text-sm">{product.description}</p>
+        <p className="text-[#4a3728] font-bold mt-1">
           ${product.price.toLocaleString('es-AR')}
         </p>
       </div>
@@ -38,15 +38,15 @@ export function ProductCard({ product }: Props) {
       <div className="flex items-center gap-3 ml-4">
         <button
           onClick={() => setQty(product.id, qty - 1)}
-          className="w-8 h-8 rounded-full border border-gray-300 text-gray-600 flex items-center justify-center hover:bg-gray-100 transition-colors text-lg leading-none"
+          className="w-8 h-8 rounded-full border border-[#d4c9b0] text-[#8a7560] flex items-center justify-center hover:bg-[#f5ede0] hover:border-[#8a6e4b] transition-colors text-lg leading-none"
           aria-label="Restar"
         >
           −
         </button>
-        <span className="w-4 text-center text-gray-800 font-medium">{qty}</span>
+        <span className="w-5 text-center text-[#3a2a1a] font-semibold">{qty}</span>
         <button
           onClick={() => setQty(product.id, qty + 1)}
-          className="w-8 h-8 rounded-full border border-gray-300 text-gray-600 flex items-center justify-center hover:bg-gray-100 transition-colors text-lg leading-none"
+          className="w-8 h-8 rounded-full bg-[#4a3728] text-[#f5f0e8] flex items-center justify-center hover:bg-[#3a2a1a] transition-colors text-lg leading-none"
           aria-label="Sumar"
         >
           +
