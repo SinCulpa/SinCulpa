@@ -34,7 +34,7 @@ export const products: Product[] = [
     name: 'Brownie con nueces y chips',
     image: brownieImg,
     description: 'banana · huevo · nueces · chips de chocolate',
-    price: 3800,
+    price: 4000,
     badge: undefined,
     badgeColor: undefined,
   },
