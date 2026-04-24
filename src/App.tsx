@@ -37,7 +37,7 @@ export default function App() {
 
         {/* Checkout */}
         {hasItems && (
-          <section id="pedido" className="space-y-4">
+          <section id="pedido" className="space-y-4" style={{ scrollMarginTop: '70px' }}>
             <h2 className="text-xs font-semibold text-[#8a7560] uppercase tracking-widest pl-1">
               Tu pedido
             </h2>
