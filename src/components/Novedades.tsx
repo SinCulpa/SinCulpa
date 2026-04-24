@@ -19,17 +19,28 @@ export function Novedades() {
         <div className="divide-y divide-[#ede5d8]">
           <div className="flex items-center gap-4 px-5 py-4">
             <div className="w-10 h-10 rounded-full bg-[#f5ede0] flex items-center justify-center text-lg flex-shrink-0">
-              🍪
+              🍫
             </div>
             <div>
-              <p className="text-[#3a2a1a] font-semibold text-sm">Nuevos sabores de brownie</p>
-              <p className="text-[#9a8878] text-xs mt-0.5">Próximamente incorporamos variedades nuevas a la carta</p>
+              <p className="text-[#3a2a1a] font-semibold text-sm">Trufas</p>
+              <p className="text-[#9a8878] text-xs mt-0.5">Próximamente en nuestra carta</p>
             </div>
             <span className="ml-auto text-xs bg-[#e8dfd0] text-[#8a6e4b] font-medium px-2.5 py-1 rounded-full flex-shrink-0">
               Pronto
             </span>
           </div>
-
+          <div className="flex items-center gap-4 px-5 py-4">
+            <div className="w-10 h-10 rounded-full bg-[#f5ede0] flex items-center justify-center text-lg flex-shrink-0">
+              🍬
+            </div>
+            <div>
+              <p className="text-[#3a2a1a] font-semibold text-sm">Bocaditos</p>
+              <p className="text-[#9a8878] text-xs mt-0.5">Próximamente en nuestra carta</p>
+            </div>
+            <span className="ml-auto text-xs bg-[#e8dfd0] text-[#8a6e4b] font-medium px-2.5 py-1 rounded-full flex-shrink-0">
+              Pronto
+            </span>
+          </div>
         </div>
 
         {/* Footer de la card */}
