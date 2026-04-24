@@ -1,7 +1,7 @@
 import { useCartStore } from '../store/cartStore'
 
 export function CustomerInfo() {
-  const { customerName, customerAddress, setCustomerName, setCustomerAddress } = useCartStore()
+  const { customerName, customerAddress, flourType, setCustomerName, setCustomerAddress, setFlourType } = useCartStore()
 
   return (
     <div className="space-y-3">
@@ -32,6 +32,28 @@ export function CustomerInfo() {
           placeholder="Ej: Rivadavia 1234, piso 2"
           className="w-full px-4 py-2.5 rounded-xl border border-[#d4c9b0] bg-white/60 text-[#3a2a1a] placeholder-[#c0b09a] text-sm focus:outline-none focus:border-[#8a6e4b] focus:ring-2 focus:ring-[#8a6e4b]/20 transition-all"
         />
+      </div>
+
+      {/* Tipo de harina */}
+      <div>
+        <label className="text-sm text-[#6b5040] font-semibold block mb-1.5">
+          Tipo de harina <span className="text-[#9a8878] font-normal">(opcional)</span>
+        </label>
+        <div className="flex gap-3">
+          {(['integral', 'avena'] as const).map((tipo) => (
+            <button
+              key={tipo}
+              onClick={() => setFlourType(flourType === tipo ? null : tipo)}
+              className={`flex-1 py-2 rounded-xl border text-sm font-medium transition-all capitalize ${
+                flourType === tipo
+                  ? 'bg-[#4a3728] text-[#f5f0e8] border-[#4a3728]'
+                  : 'bg-white/60 text-[#6b5040] border-[#d4c9b0] hover:border-[#8a6e4b]'
+              }`}
+            >
+              {tipo === 'integral' ? 'Harina integral' : 'Avena'}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Shipping info */}

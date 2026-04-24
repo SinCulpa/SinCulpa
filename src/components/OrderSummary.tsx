@@ -2,7 +2,7 @@ import { useCartStore } from '../store/cartStore'
 import { products } from '../data/products'
 
 export function OrderSummary() {
-  const { items, tipPercent, paymentMethod, customerName, customerAddress, reset } = useCartStore()
+  const { items, tipPercent, paymentMethod, customerName, customerAddress, flourType, reset } = useCartStore()
 
   const subtotal = items.reduce((acc, item) => {
     const product = products.find((p) => p.id === item.productId)
@@ -22,6 +22,7 @@ export function OrderSummary() {
 
     const tipLine = tipPercent > 0 ? `\nPropina (${tipPercent}%): $${tipAmount.toLocaleString('es-AR')}` : ''
     const addressLine = customerAddress.trim() ? `\nDirección: ${customerAddress.trim()}` : ''
+    const flourLine = flourType ? `\nHarina: ${flourType === 'integral' ? 'Harina integral' : 'Avena'}` : ''
 
     const message = [
       `Hola! Soy *${customerName.trim()}* y quiero hacer el siguiente pedido:`,
@@ -31,7 +32,7 @@ export function OrderSummary() {
       `Subtotal: $${subtotal.toLocaleString('es-AR')}${tipLine}`,
       `*Total: $${total.toLocaleString('es-AR')}*`,
       '',
-      `Pago: ${paymentMethod}${addressLine}`,
+      `Pago: ${paymentMethod}${addressLine}${flourLine}`,
     ].join('\n')
 
     const url = `https://wa.me/5492494377085?text=${encodeURIComponent(message)}`

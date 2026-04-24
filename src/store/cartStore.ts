@@ -6,17 +6,21 @@ interface CartItem {
   qty: number
 }
 
+type FlourType = 'integral' | 'avena' | null
+
 interface CartStore {
   items: CartItem[]
   tipPercent: number
   paymentMethod: PaymentMethod | null
   customerName: string
   customerAddress: string
+  flourType: FlourType
   setQty: (productId: string, qty: number) => void
   setTip: (percent: number) => void
   setPaymentMethod: (method: PaymentMethod) => void
   setCustomerName: (name: string) => void
   setCustomerAddress: (address: string) => void
+  setFlourType: (type: FlourType) => void
   reset: () => void
 }
 
@@ -26,6 +30,7 @@ export const useCartStore = create<CartStore>((set) => ({
   paymentMethod: null,
   customerName: '',
   customerAddress: '',
+  flourType: null,
   setQty: (productId, qty) =>
     set((state) => {
       if (qty <= 0) return { items: state.items.filter((i) => i.productId !== productId) }
@@ -37,5 +42,6 @@ export const useCartStore = create<CartStore>((set) => ({
   setPaymentMethod: (method) => set({ paymentMethod: method }),
   setCustomerName: (name) => set({ customerName: name }),
   setCustomerAddress: (address) => set({ customerAddress: address }),
-  reset: () => set({ items: [], tipPercent: 0, paymentMethod: null, customerName: '', customerAddress: '' }),
+  setFlourType: (type) => set({ flourType: type }),
+  reset: () => set({ items: [], tipPercent: 0, paymentMethod: null, customerName: '', customerAddress: '', flourType: null }),
 }))
