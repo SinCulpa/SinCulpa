@@ -2,7 +2,7 @@ import { useCartStore } from '../store/cartStore'
 import { products } from '../data/products'
 
 export function OrderSummary() {
-  const { items, tipPercent, paymentMethod, customerName, customerAddress, flourType, reset } = useCartStore()
+  const { items, tipPercent, paymentMethod, customerName, customerAddress, flourType, reset, setSubmitted } = useCartStore()
 
   const subtotal = items.reduce((acc, item) => {
     const product = products.find((p) => p.id === item.productId)
@@ -15,6 +15,10 @@ export function OrderSummary() {
   const canSend = items.length > 0 && paymentMethod !== null && customerName.trim().length > 0
 
   const handleSend = () => {
+    if (!canSend) {
+      setSubmitted(true)
+      return
+    }
     const lines = items.map((item) => {
       const product = products.find((p) => p.id === item.productId)
       return `• ${product?.name} x${item.qty} — $${((product?.price ?? 0) * item.qty).toLocaleString('es-AR')}`
@@ -40,9 +44,6 @@ export function OrderSummary() {
     reset()
   }
 
-  const missingName = customerName.trim().length === 0
-  const missingPayment = paymentMethod === null
-
   return (
     <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-[#d4c9b0] p-4 shadow-sm space-y-3">
       <div className="flex justify-between text-sm text-[#9a8878]">
@@ -62,25 +63,8 @@ export function OrderSummary() {
         <span>${total.toLocaleString('es-AR')}</span>
       </div>
 
-      {/* Validation hints */}
-      {!canSend && items.length > 0 && (
-        <div className="space-y-1">
-          {missingName && (
-            <p className="text-xs text-[#c0392b] flex items-center gap-1">
-              <span>⚠</span> Ingresá tu nombre para continuar
-            </p>
-          )}
-          {missingPayment && (
-            <p className="text-xs text-[#c0392b] flex items-center gap-1">
-              <span>⚠</span> Seleccioná un método de pago
-            </p>
-          )}
-        </div>
-      )}
-
       <button
         onClick={handleSend}
-        disabled={!canSend}
         className={`w-full py-3 rounded-xl text-sm font-semibold transition-all flex items-center justify-center gap-2 ${
           canSend
             ? 'bg-[#4a3728] text-[#f5f0e8] hover:bg-[#3a2a1a] shadow-sm hover:shadow-md'
