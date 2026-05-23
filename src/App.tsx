@@ -55,6 +55,27 @@ export default function App() {
           </section>
         )}
 
+        {/* Por qué elegirnos */}
+        <section className="bg-white/70 backdrop-blur-sm rounded-2xl border border-[#d4c9b0] p-5 shadow-sm">
+          <h2 className="text-[#4a3728] font-bold text-base mb-4">¿Por qué elegir Sin Culpa?</h2>
+          <ul className="space-y-3">
+            {[
+              'Ingredientes más saludables',
+              'Sin harinas refinadas ni azúcares procesados',
+              'Mucho sabor, sin resignar calidad',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#4a3728] flex items-center justify-center">
+                  <svg className="w-3 h-3 text-[#f5f0e8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span className="text-[#4a3728] text-sm leading-snug">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Novedades */}
         <Novedades />
       </main>
