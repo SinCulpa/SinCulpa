@@ -1,25 +1,21 @@
 import { useState, useEffect, useCallback } from 'react'
-import brownieImg from '../assets/brownie.jfif'
 
 const SLIDES = [
   {
-    image: brownieImg,
-    overlay: 'bg-gradient-to-t from-[#2a1a0e]/80 via-[#2a1a0e]/30 to-transparent',
+    image: 'https://images.unsplash.com/photo-1461009312844-e80697a81cc7?auto=format&fit=crop&w=800&q=80',
     tag: '🍫 Receta artesanal',
     title: 'Postres que\nte hacen bien',
     sub: 'Sin harinas refinadas · Sin azúcares procesados',
   },
   {
-    image: brownieImg,
-    overlay: 'bg-gradient-to-t from-[#1a2e0e]/80 via-[#1a2e0e]/30 to-transparent',
-    tag: '🍫 Receta artesanal',
+    image: 'https://images.unsplash.com/photo-1566855833528-35bcc17ae9ce?auto=format&fit=crop&w=800&q=80',
+    tag: '✨ Hecho a mano',
     title: 'Brownies fit\nhecho a mano',
     sub: 'Banana · Nueces · Amor',
   },
   {
-    image: brownieImg,
-    overlay: 'bg-gradient-to-t from-[#3a2000]/80 via-[#3a2000]/30 to-transparent',
-    tag: '✨ Nuevo',
+    image: 'https://images.unsplash.com/photo-1732105094945-a22182f23169?auto=format&fit=crop&w=800&q=80',
+    tag: '🎁 Para regalar',
     title: 'Pack x3\na precio especial',
     sub: 'Ideal para regalar o darte un gusto',
   },
@@ -54,7 +50,7 @@ export function HeroCarousel() {
   const slide = SLIDES[current]
 
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ height: '320px' }}>
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-xl" style={{ height: '440px' }}>
       {/* Image */}
       <img
         src={slide.image}
@@ -63,21 +59,39 @@ export function HeroCarousel() {
         style={{ opacity: animating ? 0 : 1 }}
       />
 
-      {/* Overlay */}
-      <div className={`absolute inset-0 ${slide.overlay} transition-opacity duration-500`} style={{ opacity: animating ? 0 : 1 }} />
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0 transition-opacity duration-500"
+        style={{
+          opacity: animating ? 0 : 1,
+          background: 'linear-gradient(to top, rgba(20,10,5,0.82) 0%, rgba(20,10,5,0.40) 45%, rgba(20,10,5,0.05) 100%)',
+        }}
+      />
 
       {/* Text content */}
       <div
-        className="absolute inset-0 flex flex-col justify-end p-6 transition-all duration-500"
+        className="absolute inset-0 flex flex-col justify-end px-6 pt-6 pb-12 transition-all duration-500"
         style={{ opacity: animating ? 0 : 1, transform: animating ? 'translateY(8px)' : 'translateY(0)' }}
       >
         <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full mb-3 w-fit border border-white/30">
           {slide.tag}
         </span>
-        <h2 className="text-white font-bold text-2xl leading-tight mb-2" style={{ whiteSpace: 'pre-line' }}>
+        <h2
+          className="text-white font-bold text-3xl leading-tight mb-2"
+          style={{ whiteSpace: 'pre-line', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
+        >
           {slide.title}
         </h2>
-        <p className="text-white/80 text-sm">{slide.sub}</p>
+        <p className="text-white/80 text-sm mb-5">{slide.sub}</p>
+        <button
+          onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
+          className="inline-flex items-center gap-2 bg-white text-[#4a3728] font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-[#f5f0e8] active:scale-95 transition-all duration-150 shadow-md w-fit"
+        >
+          Ver productos
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
 
       {/* Prev / Next arrows */}

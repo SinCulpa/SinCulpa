@@ -39,10 +39,6 @@ export function Navbar() {
           </div>
         )}
 
-        {/* Leaf decoration when cart is empty */}
-        {totalQty === 0 && (
-          <span className="text-[#7a9e6e] text-xl">🌿</span>
-        )}
       </div>
     </nav>
   )
