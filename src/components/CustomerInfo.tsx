@@ -59,18 +59,18 @@ export function CustomerInfo() {
         {nameError && <FieldError message="Ingresá tu nombre para continuar" />}
       </div>
 
-      {/* Dirección */}
+      {/* Dirección / Observaciones */}
       <div>
         <label className="text-sm text-[#6b5040] font-semibold block mb-1.5">
-          Dirección de entrega{' '}
+          Dirección y observaciones{' '}
           <span className="text-[#9a8878] font-normal">(opcional)</span>
         </label>
-        <input
-          type="text"
+        <textarea
+          rows={3}
           value={customerAddress}
           onChange={(e) => setCustomerAddress(e.target.value)}
-          placeholder="Ej: Rivadavia 1234, piso 2"
-          className="w-full px-4 py-2.5 rounded-xl border border-[#d4c9b0] bg-white/60 text-[#3a2a1a] placeholder-[#c0b09a] text-sm focus:outline-none focus:border-[#8a6e4b] focus:ring-2 focus:ring-[#8a6e4b]/20 transition-all"
+          placeholder="Ej: Rivadavia 1234, piso 2 · Promo x3: 2 con nueces y 1 con chips"
+          className="w-full px-4 py-2.5 rounded-xl border border-[#d4c9b0] bg-white/60 text-[#3a2a1a] placeholder-[#c0b09a] text-sm focus:outline-none focus:border-[#8a6e4b] focus:ring-2 focus:ring-[#8a6e4b]/20 transition-all resize-none"
         />
       </div>
 

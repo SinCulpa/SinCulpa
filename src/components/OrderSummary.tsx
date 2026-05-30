@@ -25,7 +25,7 @@ export function OrderSummary() {
     })
 
     const tipLine = tipPercent > 0 ? `\nPropina (${tipPercent}%): $${tipAmount.toLocaleString('es-AR')}` : ''
-    const addressLine = customerAddress.trim() ? `\nDirección: ${customerAddress.trim()}` : ''
+    const addressLine = customerAddress.trim() ? `\nDirección / Observaciones: ${customerAddress.trim()}` : ''
     const flourLine = flourType ? `\nHarina: ${flourType === 'integral' ? 'Harina integral' : 'Avena'}` : ''
 
     const message = [
