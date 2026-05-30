@@ -30,6 +30,14 @@ export function PaymentSelector() {
           </button>
         ))}
       </div>
+      {paymentMethod === 'Transferencia' && (
+        <div className="mt-2 flex items-center gap-2 bg-[#f5f0e8] rounded-xl px-3 py-2.5 border border-[#d4c9b0]">
+          <span className="text-base">🏦</span>
+          <p className="text-xs text-[#6b5040]">
+            Alias <span className="font-semibold">sinculpa.tandil</span> a nombre de Candela Lopez
+          </p>
+        </div>
+      )}
       {paymentError && (
         <p className="mt-1.5 text-xs text-[#c0392b] flex items-center gap-1">
           <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
