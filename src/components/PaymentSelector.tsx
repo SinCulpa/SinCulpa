@@ -34,7 +34,7 @@ export function PaymentSelector() {
         <div className="mt-2 flex items-center gap-2 bg-[#f5f0e8] rounded-xl px-3 py-2.5 border border-[#d4c9b0]">
           <span className="text-base">🏦</span>
           <p className="text-xs text-[#6b5040]">
-            Alias <span className="font-semibold">sinculpa.tandil</span> a nombre de Candela Lopez
+            Alias <span className="font-semibold">sinculpa.tandil</span> a nombre de Candela Lopez Mezzas
           </p>
         </div>
       )}
