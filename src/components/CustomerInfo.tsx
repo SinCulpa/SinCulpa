@@ -21,7 +21,7 @@ export function CustomerInfo() {
       {/* Tipo de base */}
       <div>
         <label className="text-sm text-[#6b5040] font-semibold block mb-1.5">
-          Tipo de base <span className="text-[#9a8878] font-normal">(opcional)</span>
+          Tipo de base brownie <span className="text-[#9a8878] font-normal">(opcional)</span>
         </label>
         <div className="flex gap-3">
           {(['integral', 'avena'] as const).map((tipo) => (
