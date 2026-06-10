@@ -1,8 +1,27 @@
 import { useState, useEffect, useCallback } from 'react'
 import snack2Img from '../assets/snack2.jfif'
 import brownie3Img from '../assets/brownie3.jfif'
+import brownie4Img from '../assets/brownie4.jpg'
 
 const SLIDES = [
+  {
+    image: snack2Img,
+    tag: '⚡ Snack energético',
+    title: 'Snack\nenergético',
+    sub: 'La opción ideal para recargar energías',
+  },
+  {
+    image: brownie3Img,
+    tag: '🍫 Brownie artesanal',
+    title: 'Brownie\nartesanal',
+    sub: 'Sin harinas refinadas · Sin azúcares procesados',
+  },
+  {
+    image: brownie4Img,
+    tag: '🍫 Brownie artesanal',
+    title: 'Brownie\nartesanal',
+    sub: 'Sin harinas refinadas · Sin azúcares procesados',
+  },
   {
     image: 'https://images.unsplash.com/photo-1461009312844-e80697a81cc7?auto=format&fit=crop&w=800&q=80',
     tag: '🍫 Receta artesanal',
@@ -20,18 +39,6 @@ const SLIDES = [
     tag: '🎁 Para regalar',
     title: 'Pack x3\na precio especial',
     sub: 'Ideal para regalar o darte un gusto',
-  },
-  {
-    image: snack2Img,
-    tag: '⚡ Snack energético',
-    title: 'Snack\nenergético',
-    sub: 'La opción ideal para recargar energías',
-  },
-  {
-    image: brownie3Img,
-    tag: '🍫 Brownie artesanal',
-    title: 'Brownie\nartesanal',
-    sub: 'Sin harinas refinadas · Sin azúcares procesados',
   },
 ]
 
