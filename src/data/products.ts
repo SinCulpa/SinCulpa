@@ -1,5 +1,6 @@
 import type { Product } from '../types'
 import brownieImg from '../assets/brownie.jfif'
+import snackImg from '../assets/9f88ad87-4251-4e0c-a179-551a011f62fd.jfif'
 
 export const products: Product[] = [
   {
@@ -35,6 +36,15 @@ export const products: Product[] = [
     image: brownieImg,
     description: 'banana · huevo · nueces · chips de chocolate',
     price: 5000,
+    badge: undefined,
+    badgeColor: undefined,
+  },
+  {
+    id: 'snack-energetico',
+    name: 'Snack energético',
+    image: snackImg,
+    description: '',
+    price: 1400,
     badge: undefined,
     badgeColor: undefined,
   },
