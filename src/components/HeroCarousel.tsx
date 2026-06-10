@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
+import snack2Img from '../assets/snack2.jfif'
+import brownie3Img from '../assets/brownie3.jfif'
 
 const SLIDES = [
   {
@@ -18,6 +20,18 @@ const SLIDES = [
     tag: '🎁 Para regalar',
     title: 'Pack x3\na precio especial',
     sub: 'Ideal para regalar o darte un gusto',
+  },
+  {
+    image: snack2Img,
+    tag: '⚡ Snack energético',
+    title: 'Snack\nenergético',
+    sub: 'La opción ideal para recargar energías',
+  },
+  {
+    image: brownie3Img,
+    tag: '🍫 Brownie artesanal',
+    title: 'Brownie\nartesanal',
+    sub: 'Sin harinas refinadas · Sin azúcares procesados',
   },
 ]
 
