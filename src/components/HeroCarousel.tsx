@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import snack2Img from '../assets/snack2.jfif'
 import brownie3Img from '../assets/brownie3.jfif'
-import brownie4Img from '../assets/brownie4.jfif'
+import brownie4Img from '../assets/brownie4.jpg'
 
 const SLIDES = [
   {
