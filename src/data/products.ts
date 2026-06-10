@@ -1,6 +1,6 @@
 import type { Product } from '../types'
-import brownieImg from '../assets/brownie.jfif'
-import snackImg from '../assets/9f88ad87-4251-4e0c-a179-551a011f62fd.jfif'
+import brownieImg from '../assets/brownie2.jfif'
+import snackImg from '../assets/snack1.jfif'
 
 export const products: Product[] = [
   {
