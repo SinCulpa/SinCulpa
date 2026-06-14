@@ -44,7 +44,7 @@ export const products: Product[] = [
     name: 'Snack energético',
     image: snackImg,
     description: '',
-    price: 1400,
+    price: 1700,
     badge: undefined,
     badgeColor: undefined,
   },
