@@ -1,6 +1,7 @@
 import type { Product } from '../types'
 import brownieImg from '../assets/brownie2.jfif'
 import snackImg from '../assets/snack1.jfif'
+import muffitImg from '../assets/muffin-gral.jfif'
 
 export const products: Product[] = [
   {
@@ -49,11 +50,47 @@ export const products: Product[] = [
     badgeColor: undefined,
   },
   {
+    id: 'muffit-banana',
+    name: 'Muffit de banana',
+    image: muffitImg,
+    description: 'muffin saludable · banana',
+    price: 1200,
+    badge: undefined,
+    badgeColor: undefined,
+  },
+  {
+    id: 'muffit-chocolate',
+    name: 'Muffit de chocolate',
+    image: muffitImg,
+    description: 'muffin saludable · chocolate',
+    price: 1200,
+    badge: undefined,
+    badgeColor: undefined,
+  },
+  {
+    id: 'muffit-zanahoria',
+    name: 'Muffit de zanahoria',
+    image: muffitImg,
+    description: 'muffin saludable · zanahoria',
+    price: 1200,
+    badge: undefined,
+    badgeColor: undefined,
+  },
+  {
     id: 'pack3',
     name: 'Brownie x3 unidades',
     image: brownieImg,
     description: '3 brownies a elección · precio especial',
     price: 13000,
+    badge: 'promo',
+    badgeColor: 'green',
+  },
+  {
+    id: 'muffit-x6',
+    name: 'Muffit x6 unidades',
+    image: muffitImg,
+    description: '6 muffits a elección · precio especial',
+    price: 6500,
     badge: 'promo',
     badgeColor: 'green',
   },
