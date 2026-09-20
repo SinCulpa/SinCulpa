@@ -2,6 +2,7 @@ import type { Product } from '../types'
 import brownieImg from '../assets/brownie2.jfif'
 import snackImg from '../assets/snack1.jfif'
 import muffitImg from '../assets/muffin-gral.jfif'
+import comboSnackMuffitImg from '../assets/combo-snack-muffit.jfif'
 
 export const products: Product[] = [
   {
@@ -91,6 +92,15 @@ export const products: Product[] = [
     image: muffitImg,
     description: '6 muffits a elección · precio especial',
     price: 6500,
+    badge: 'promo',
+    badgeColor: 'green',
+  },
+  {
+    id: 'combo-snack-muffit',
+    name: 'Combo Snack + Muffit',
+    image: comboSnackMuffitImg,
+    description: '1 snack energético + 1 muffit a elección · precio especial',
+    price: 3000,
     badge: 'promo',
     badgeColor: 'green',
   },

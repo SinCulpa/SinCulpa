@@ -13,6 +13,8 @@ import { Novedades } from './components/Novedades'
 export default function App() {
   const items = useCartStore((s) => s.items)
   const hasItems = items.length > 0
+  const regularProducts = products.filter((p) => !p.badge)
+  const promoProducts = products.filter((p) => p.badge)
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'linear-gradient(160deg, #fdf8f0 0%, #f5ede0 50%, #eee5d3 100%)' }}>
@@ -29,7 +31,19 @@ export default function App() {
             Nuestros productos
           </h2>
           <div className="space-y-3">
-            {products.map((product) => (
+            {regularProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+
+        {/* Promociones */}
+        <section id="promociones" style={{ scrollMarginTop: '70px' }}>
+          <h2 className="text-xs font-semibold text-[#8a7560] uppercase tracking-widest mb-3 pl-1">
+            Promociones
+          </h2>
+          <div className="space-y-3">
+            {promoProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
