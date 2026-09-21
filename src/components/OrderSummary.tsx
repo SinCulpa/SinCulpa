@@ -39,7 +39,7 @@ export function OrderSummary() {
       `Pago: ${paymentMethod}${addressLine}${flourLine}`,
     ].join('\n')
 
-    const url = `https://wa.me/5492494377085?text=${encodeURIComponent(message)}`
+    const url = `https://wa.me/5492494266731?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
     reset()
   }

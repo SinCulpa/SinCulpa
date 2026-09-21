@@ -16,7 +16,7 @@ export function Footer() {
         {/* Links / Info */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-[#c9b99a] mb-6">
           <a
-            href="https://wa.me/5492494377085"
+            href="https://wa.me/5492494266731"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-white transition-colors"
