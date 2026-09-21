@@ -40,7 +40,7 @@ export default function App() {
         {/* Promociones */}
         <section id="promociones" style={{ scrollMarginTop: '70px' }}>
           <h2 className="text-xs font-semibold text-[#8a7560] uppercase tracking-widest mb-3 pl-1">
-            Promociones
+            Promociones / Combos
           </h2>
           <div className="space-y-3">
             {promoProducts.map((product) => (

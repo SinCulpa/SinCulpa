@@ -1,12 +1,25 @@
+import { useState } from 'react'
 import type { PaymentMethod } from '../types'
 import { useCartStore } from '../store/cartStore'
 
 const METHODS: PaymentMethod[] = ['Efectivo', 'Transferencia']
+const ALIAS = 'sinculpa.tandil'
 
 export function PaymentSelector() {
   const { paymentMethod, submitted, setPaymentMethod } = useCartStore()
+  const [copied, setCopied] = useState(false)
 
   const paymentError = submitted && paymentMethod === null
+
+  const handleCopyAlias = async () => {
+    try {
+      await navigator.clipboard.writeText(ALIAS)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // clipboard unavailable
+    }
+  }
 
   return (
     <div>
@@ -31,12 +44,19 @@ export function PaymentSelector() {
         ))}
       </div>
       {paymentMethod === 'Transferencia' && (
-        <div className="mt-2 flex items-center gap-2 bg-[#f5f0e8] rounded-xl px-3 py-2.5 border border-[#d4c9b0]">
+        <button
+          type="button"
+          onClick={handleCopyAlias}
+          className="mt-2 w-full flex items-center gap-2 bg-[#f5f0e8] rounded-xl px-3 py-2.5 border border-[#d4c9b0] hover:border-[#8a6e4b] transition-colors text-left"
+        >
           <span className="text-base">🏦</span>
-          <p className="text-xs text-[#6b5040]">
-            Alias <span className="font-semibold">sinculpa.tandil</span> a nombre de Candela Lopez Mezzas
+          <p className="text-xs text-[#6b5040] flex-1">
+            Alias <span className="font-semibold">{ALIAS}</span> a nombre de Candela Lopez Mezzas
           </p>
-        </div>
+          <span className="text-xs font-semibold text-[#8a7560] whitespace-nowrap">
+            {copied ? '✓ Copiado' : 'Copiar'}
+          </span>
+        </button>
       )}
       {paymentError && (
         <p className="mt-1.5 text-xs text-[#c0392b] flex items-center gap-1">

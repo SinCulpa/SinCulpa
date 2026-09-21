@@ -2,7 +2,7 @@ import { useCartStore } from '../store/cartStore'
 import { products } from '../data/products'
 
 export function OrderSummary() {
-  const { items, tipPercent, paymentMethod, customerName, customerAddress, flourType, reset, setSubmitted } = useCartStore()
+  const { items, tipPercent, paymentMethod, customerName, customerAddress, customerNotes, flourType, reset, setSubmitted } = useCartStore()
 
   const subtotal = items.reduce((acc, item) => {
     const product = products.find((p) => p.id === item.productId)
@@ -25,7 +25,8 @@ export function OrderSummary() {
     })
 
     const tipLine = tipPercent > 0 ? `\nPropina (${tipPercent}%): $${tipAmount.toLocaleString('es-AR')}` : ''
-    const addressLine = customerAddress.trim() ? `\nDirección / Observaciones: ${customerAddress.trim()}` : ''
+    const addressLine = customerAddress.trim() ? `\nDirección: ${customerAddress.trim()}` : ''
+    const notesLine = customerNotes.trim() ? `\nObservaciones: ${customerNotes.trim()}` : ''
     const flourLine = flourType ? `\nHarina: ${flourType === 'integral' ? 'Harina integral' : 'Avena'}` : ''
 
     const message = [
@@ -36,7 +37,7 @@ export function OrderSummary() {
       `Subtotal: $${subtotal.toLocaleString('es-AR')}${tipLine}`,
       `*Total: $${total.toLocaleString('es-AR')}*`,
       '',
-      `Pago: ${paymentMethod}${addressLine}${flourLine}`,
+      `Pago: ${paymentMethod}${addressLine}${notesLine}${flourLine}`,
     ].join('\n')
 
     const url = `https://wa.me/5492494266731?text=${encodeURIComponent(message)}`

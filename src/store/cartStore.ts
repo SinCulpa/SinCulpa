@@ -14,6 +14,7 @@ interface CartStore {
   paymentMethod: PaymentMethod | null
   customerName: string
   customerAddress: string
+  customerNotes: string
   flourType: FlourType
   submitted: boolean
   setQty: (productId: string, qty: number) => void
@@ -21,6 +22,7 @@ interface CartStore {
   setPaymentMethod: (method: PaymentMethod) => void
   setCustomerName: (name: string) => void
   setCustomerAddress: (address: string) => void
+  setCustomerNotes: (notes: string) => void
   setFlourType: (type: FlourType) => void
   setSubmitted: (v: boolean) => void
   reset: () => void
@@ -32,6 +34,7 @@ export const useCartStore = create<CartStore>((set) => ({
   paymentMethod: null,
   customerName: '',
   customerAddress: '',
+  customerNotes: '',
   flourType: null,
   submitted: false,
   setQty: (productId, qty) =>
@@ -45,7 +48,8 @@ export const useCartStore = create<CartStore>((set) => ({
   setPaymentMethod: (method) => set({ paymentMethod: method }),
   setCustomerName: (name) => set({ customerName: name }),
   setCustomerAddress: (address) => set({ customerAddress: address }),
+  setCustomerNotes: (notes) => set({ customerNotes: notes }),
   setFlourType: (type) => set({ flourType: type }),
   setSubmitted: (v) => set({ submitted: v }),
-  reset: () => set({ items: [], tipPercent: 0, paymentMethod: null, customerName: '', customerAddress: '', flourType: null, submitted: false }),
+  reset: () => set({ items: [], tipPercent: 0, paymentMethod: null, customerName: '', customerAddress: '', customerNotes: '', flourType: null, submitted: false }),
 }))

@@ -1,6 +1,6 @@
 import { useCartStore } from '../store/cartStore'
 
-const TIP_OPTIONS = [0, 10, 15, 20]
+const TIP_OPTIONS = [0, 5, 10, 15]
 
 export function TipSelector() {
   const { tipPercent, setTip } = useCartStore()
